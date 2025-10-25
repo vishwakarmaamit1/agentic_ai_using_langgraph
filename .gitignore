@@ -1,0 +1,61 @@
+# ----------------------------------------------------------------------
+# ⚡️ Standard Python Development Exclusions ⚡️
+# ----------------------------------------------------------------------
+
+# Byte-compiled / optimized / backup files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+*.so # Shared libraries
+
+# Virtual Environment
+# You should always ignore the directory where your virtual environment is stored.
+# Common names include 'env', 'venv', 'v-env', etc.
+.venv/
+
+# Distributions and packaging
+.Python
+build/
+dist/
+wheels/
+*.egg-info/
+htmlcov/  # Coverage reports
+.tox/     # Tox directories
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+*.sqlite3
+
+# ----------------------------------------------------------------------
+# 🔑 Python-Specific Tooling & Frameworks 🔑
+# ----------------------------------------------------------------------
+
+# Jupyter / IPython
+.ipynb_checkpoints
+profile_default/
+ipython_config.py
+
+# FastAPI / Uvicorn / Gunicorn
+.coverage  # Coverage test artifacts
+.pytest_cache/
+.mypy_cache/
+
+
+# ----------------------------------------------------------------------
+# 🖥️ Operating System & Editor/IDE Exclusions 🖥️
+# ----------------------------------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# PyCharm / IntelliJ IDEA
+.idea/
+
+# Credentials and sensitive files (VERY IMPORTANT 🔒)
+*.pem
+*.key
+*.json  # Explicitly ignore JSON files that might contain secrets
