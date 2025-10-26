@@ -18,3 +18,7 @@ print(f"Set GOOGLE_APPLICATION_CREDENTIALS to: {os.environ.get('GOOGLE_APPLICATI
 # Any subsequent code that uses a Google Cloud client library
 # (e.g., from google.cloud import storage) will automatically use
 # the specified service account key for authentication.
+
+# For Gemini API
+GEMINI_KEY = "AI****************************" # Replace with your actual key
+os.environ["GEMINI_API_KEY"] = GEMINI_KEY
