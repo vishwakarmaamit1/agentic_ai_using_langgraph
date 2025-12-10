@@ -1,0 +1,18 @@
+Project Name: reflected-radio-438310-s1
+Dataset Name: retail_analytics_db
+Table Name: dimension_business_group
+Table Description: [REQUIRES MANUAL TABLE DESCRIPTION]
+
+Table Schema:
+
+1. Column Name: business_group_id
+   Description: A unique, immutable identifier for a specific business group within the retail organization. This ID serves as the primary key for the dimension_business_group table.
+   Business Context: This field is used to uniquely identify and reference a business group across various retail analytics datasets. It enables linking transactional data (e.g., sales, returns), product data, store data, or customer data to a specific business group, allowing for aggregation and analysis of performance, profitability, and trends at the business group level. It's crucial for filtering and segmenting reports by organizational structure.
+
+2. Column Name: business_group_name
+   Description: The human-readable name assigned to the business group. This name provides a descriptive label for identification in reports and user interfaces.
+   Business Context: This field is used in reports, dashboards, and analytical tools to display the name of the business group, making the data easily understandable to business users. For example, instead of seeing an ID, users will see "Electronics Division" or "Apparel Brands". It facilitates user-friendly navigation, selection, and interpretation of data when analyzing performance across different organizational units.
+
+3. Column Name: description
+   Description: A detailed textual explanation or summary providing additional context about the business group, its scope, or its primary focus.
+   Business Context: This field offers supplementary information that clarifies the nature, objectives, or specific responsibilities of a business group. It can be used by analysts and business users to gain a deeper understanding of a particular group, especially when its name might not fully convey its scope (e.g., "Luxury Goods" might have a description detailing specific brands or target demographics). This helps in making more informed decisions and interpreting performance metrics accurately.

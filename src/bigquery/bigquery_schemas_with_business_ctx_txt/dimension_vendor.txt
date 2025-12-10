@@ -1,0 +1,30 @@
+Project Name: reflected-radio-438310-s1
+Dataset Name: retail_analytics_db
+Table Name: dimension_vendor
+Table Description: [REQUIRES MANUAL TABLE DESCRIPTION]
+
+Table Schema:
+
+1. Column Name: vendor_id
+   Description: A unique identifier assigned to each vendor or supplier. This is typically an alphanumeric string used as the primary key for the vendor dimension.
+   Business Context: This field is crucial for uniquely identifying and linking vendor information across various retail datasets, such as purchase orders, inventory, and product catalogs. It enables accurate joins with fact tables (e.g., sales, inventory movements) to analyze vendor performance, product sourcing efficiency, and supply chain metrics.
+
+2. Column Name: vendor_name
+   Description: The official registered name of the vendor or supplier.
+   Business Context: Provides a human-readable name for the vendor, which is essential for reporting, dashboards, and user interfaces. Business users rely on this field to easily identify, categorize, and analyze vendors when reviewing purchasing trends, managing supplier relationships, or understanding product origins.
+
+3. Column Name: contact_email
+   Description: The primary email address designated for communication with the vendor.
+   Business Context: Used by procurement, supply chain, and merchandising teams for official communications with vendors regarding orders, deliveries, product inquiries, issue resolution, and contract management. It is vital for operational efficiency and maintaining effective vendor relationships.
+
+4. Column Name: contact_number
+   Description: The primary telephone number for direct contact with the vendor.
+   Business Context: Provides a direct phone number for urgent communications, operational coordination, and general inquiries with the vendor. This field supports quick resolution of supply chain issues, facilitates logistics, and ensures smooth business operations, especially when email communication is not immediate enough.
+
+5. Column Name: region
+   Description: The geographical region or location associated with the vendor's primary operations, headquarters, or main distribution center.
+   Business Context: Enables geographical analysis of the supply chain. Retailers can use this to understand vendor distribution, assess regional supply risks, optimize logistics and shipping costs, and make strategic sourcing decisions based on geographical proximity, regulatory requirements, or market demand.
+
+6. Column Name: created_at
+   Description: The timestamp indicating the exact date and time when the vendor record was first created or onboarded into the system.
+   Business Context: Provides an audit trail and historical context for vendor data. It can be used to track the onboarding date of new vendors, analyze vendor churn over time, or understand the age of vendor relationships, which is relevant for strategic planning, relationship management, and assessing vendor loyalty or stability.

@@ -1,0 +1,5 @@
+column_name,description
+product_group_id,A unique identifier for the product group.
+product_group_name,The name of the product group.
+business_group_id,A unique identifier for the parent business group to which this product group belongs.
+description,A detailed description or overview of the product group.

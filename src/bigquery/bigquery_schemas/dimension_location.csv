@@ -1,0 +1,5 @@
+column_name,description
+location_id,A unique identifier for each distinct retail location.
+state_name,The full name of the state where the retail location is situated.
+city_name,The full name of the city where the retail location is situated.
+region,"The broader geographical region or territory to which the location belongs (e.g., 'Northeast', 'West')."

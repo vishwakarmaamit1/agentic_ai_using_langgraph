@@ -1,0 +1,42 @@
+Project Name: reflected-radio-438310-s1
+Dataset Name: retail_analytics_db
+Table Name: dimension_product
+Table Description: [REQUIRES MANUAL TABLE DESCRIPTION]
+
+Table Schema:
+
+1. Column Name: product_id
+   Description: A unique identifier assigned to each distinct product.
+   Business Context: Used to uniquely identify products across all retail operations. It's crucial for linking product information to sales transactions, inventory records, and customer interactions, enabling detailed analysis of individual product performance, stock levels, and customer preferences.
+
+2. Column Name: product_name
+   Description: The human-readable name or title of the product.
+   Business Context: Provides a descriptive label for the product, making reports and dashboards understandable to business users. It's used for display purposes in product catalogs, sales reports, and customer-facing applications, helping analysts and customers easily identify products.
+
+3. Column Name: item_code
+   Description: The Stock Keeping Unit (SKU) or internal item code, a unique identifier for a specific product variant (e.g., size, color) used for inventory tracking and sales.
+   Business Context: Essential for granular inventory management, tracking specific product variations, and optimizing supply chain operations. It allows for precise tracking of stock levels, sales velocity, and returns for each distinct product variant, enabling accurate forecasting and replenishment.
+
+4. Column Name: product_group_id
+   Description: A unique identifier for a logical grouping of products that share common characteristics or belong to the same category.
+   Business Context: Facilitates analysis at a higher level than individual products. It's used to aggregate sales, inventory, and profitability data for product categories, allowing for performance comparisons between groups, identifying top-performing categories, and informing merchandising strategies.
+
+5. Column Name: business_group_id
+   Description: A unique identifier for a broader organizational or business unit grouping that encompasses multiple product groups.
+   Business Context: Enables high-level strategic analysis and reporting across major business segments or departments. It helps in understanding the overall performance of different business divisions, allocating resources, and setting strategic goals at an enterprise level.
+
+6. Column Name: vendor_id
+   Description: A unique identifier for the supplier or vendor from whom the product is sourced.
+   Business Context: Critical for vendor performance management, supply chain analysis, and procurement. It allows tracking of product origins, evaluating vendor reliability, negotiating terms, and analyzing the profitability of products from specific suppliers.
+
+7. Column Name: brand
+   Description: The commercial brand name associated with the product.
+   Business Context: Used for brand-level performance analysis, marketing segmentation, and understanding customer brand preferences. It helps in evaluating the market share of different brands, assessing brand loyalty, and tailoring marketing campaigns.
+
+8. Column Name: price
+   Description: The standard selling price of the product, typically the list price or current retail price.
+   Business Context: Fundamental for revenue calculation, profitability analysis, and pricing strategy. It's used in conjunction with sales quantities to calculate total revenue, determine gross margins, analyze price elasticity, and inform promotional activities.
+
+9. Column Name: created_at
+   Description: The timestamp indicating when the product record was first created or added to the system.
+   Business Context: Useful for understanding the lifecycle of products, tracking product introductions, and analyzing the performance of newly launched items over time. It can help identify trends related to product freshness and inform product catalog management.

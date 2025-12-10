@@ -13,3 +13,6 @@ pip install -r requirements.txt
 Install gcloud
 brew install --cask google-cloud-cli
 gcloud init
+
+gcloud login 
+gcloud auth application-default login

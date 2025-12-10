@@ -1,0 +1,4 @@
+column_name,description
+business_group_id,A unique identifier for each business group.
+business_group_name,The official name of the business group.
+description,A detailed description or explanation of the business group.

@@ -1,0 +1,18 @@
+Project Name: reflected-radio-438310-s1
+Dataset Name: retail_analytics_db
+Table Name: dimension_channel
+Table Description: [REQUIRES MANUAL TABLE DESCRIPTION]
+
+Table Schema:
+
+1. Column Name: channel_id
+   Description: A unique, immutable identifier assigned to each distinct retail channel. This serves as the primary key for the dimension_channel table.
+   Business Context: This field is crucial for uniquely identifying and linking channel information to fact tables (e.g., sales, orders, customer interactions). It enables accurate aggregation and filtering of data by channel, supporting analysis of channel performance and cross-channel customer journeys.
+
+2. Column Name: channel_name
+   Description: The human-readable name or label for the retail channel.
+   Business Context: This field provides a user-friendly name for reporting and analysis, allowing business users to easily identify and understand the source or medium of transactions and customer interactions (e.g., "Online Store", "Physical Retail", "Mobile App", "Call Center"). It is frequently used in dashboards and reports for channel segmentation.
+
+3. Column Name: description
+   Description: A detailed textual explanation or definition of the retail channel, providing additional context beyond its name.
+   Business Context: This field offers richer descriptive information about a channel, which can be valuable for analysts and business users. For example, it might specify the type of online platform, the geographical scope of physical stores, or the specific services offered by a call center, aiding in deeper understanding and strategic decision-making regarding channel strategy and optimization.

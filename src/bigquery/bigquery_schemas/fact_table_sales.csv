@@ -1,0 +1,15 @@
+column_name,description
+sale_id,A unique identifier for each individual sales transaction.
+product_id,"A unique identifier for the product involved in the sale, typically a foreign key to a product dimension."
+vendor_id,"A unique identifier for the vendor or supplier associated with the product sold, typically a foreign key to a vendor dimension."
+location_id,"A unique identifier for the location where the sale occurred, typically a foreign key to a location dimension."
+channel_id,"A unique identifier for the sales channel (e.g., online, in-store, mobile), typically a foreign key to a channel dimension."
+date_id,"The calendar date of the sale, used for date-based analysis and joins to a date dimension."
+sale_timestamp,The precise date and time when the sales transaction was recorded.
+quantity_sold,The number of units of the product sold in this transaction.
+total_sales,The gross revenue generated from the sale before any discounts or adjustments.
+margin,"The profit margin generated from the sale, typically calculated as (selling price - cost) / selling price."
+discount,The total monetary value of the discount applied to this specific sales transaction.
+net_amount,The final amount paid by the customer for the sale after all discounts and adjustments.
+created_at,The timestamp indicating when this sales record was first created in the system.
+updated_at,The timestamp indicating the last time this sales record was updated.

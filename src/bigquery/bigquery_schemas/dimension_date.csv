@@ -1,0 +1,11 @@
+column_name,description
+date_id,The unique identifier for a specific calendar date.
+day,"The day of the month (e.g., 1-31)."
+month,"The month of the year (e.g., 1 for January, 12 for December)."
+month_name,"The full name of the month (e.g., 'January', 'February')."
+quarter,"The quarter of the year (e.g., 1, 2, 3, 4)."
+year,The calendar year.
+week_of_year,"The week number within the year (e.g., 1-53)."
+is_weekend,A boolean flag indicating if the date falls on a weekend (TRUE) or a weekday (FALSE).
+year_month,"A string representation of the year and month (e.g., 'YYYY-MM')."
+year_quarter,"A string representation of the year and quarter (e.g., 'YYYY-Q#')."

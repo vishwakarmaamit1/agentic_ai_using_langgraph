@@ -1,0 +1,4 @@
+column_name,description
+channel_id,A unique identifier for the sales or marketing channel.
+channel_name,"The name of the sales or marketing channel (e.g., 'Online', 'In-Store', 'Mobile App')."
+description,A detailed description or additional information about the channel.

@@ -1,0 +1,7 @@
+column_name,description
+vendor_id,A unique identifier for each vendor.
+vendor_name,The official name of the vendor.
+contact_email,The primary email address for contacting the vendor.
+contact_number,The primary phone number for contacting the vendor.
+region,The geographical region where the vendor primarily operates or is located.
+created_at,The timestamp when the vendor record was first created in the system.

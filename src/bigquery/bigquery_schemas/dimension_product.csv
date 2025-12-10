@@ -1,0 +1,10 @@
+column_name,description
+product_id,A unique identifier for each product.
+product_name,The official name of the product.
+item_code,"An alternative or internal code used to identify the product, often an SKU."
+product_group_id,A unique identifier for the product group or category to which the product belongs.
+business_group_id,A unique identifier for the broader business division or segment associated with the product.
+vendor_id,A unique identifier for the vendor or supplier of the product.
+brand,The brand name of the product.
+price,The current selling price of the product.
+created_at,The timestamp when the product record was first created or added to the system.
