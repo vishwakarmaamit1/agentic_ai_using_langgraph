@@ -20,5 +20,5 @@ print(f"Set GOOGLE_APPLICATION_CREDENTIALS to: {os.environ.get('GOOGLE_APPLICATI
 # the specified service account key for authentication.
 
 # For Gemini API
-GEMINI_KEY = "AI****************************" # Replace with your actual key
+GEMINI_KEY = "AIzaSyC5g415Psswsvs1CSmcKW95wo-PJMaMQhM" # Replace with your actual key
 os.environ["GEMINI_API_KEY"] = GEMINI_KEY

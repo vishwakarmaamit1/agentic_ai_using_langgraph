@@ -1,0 +1,18 @@
+## Location & Regional Performance
+Metric Family Definition: Dimensions related to the geographical context of retail operations, enabling analysis of sales and performance by location.
+
+**Metric/Dimension: location_id**
+*   Metric Definition: An identifier that uniquely references the physical or virtual location where the sale transaction occurred.
+*   Default SQL Formula: location_id
+
+**Metric/Dimension: state_name**
+*   Metric Definition: The full name of the state or province where the retail location is geographically situated.
+*   Default SQL Formula: state_name
+
+**Metric/Dimension: city_name**
+*   Metric Definition: The full name of the city where the retail location is geographically situated.
+*   Default SQL Formula: city_name
+
+**Metric/Dimension: region**
+*   Metric Definition: A broader, predefined geographical grouping or administrative division that encompasses multiple states or cities for retail locations.
+*   Default SQL Formula: region

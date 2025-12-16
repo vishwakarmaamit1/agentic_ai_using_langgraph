@@ -1,0 +1,42 @@
+## Product & Merchandising Analytics
+Metric Family Definition: Dimensions and attributes related to products, their groupings, and associated business units, enabling analysis of product performance and merchandising strategies.
+
+**Metric/Dimension: product_id**
+*   Metric Definition: An identifier that uniquely references a specific product involved in the sale.
+*   Default SQL Formula: product_id
+
+**Metric/Dimension: product_name**
+*   Metric Definition: The human-readable name or title of the product.
+*   Default SQL Formula: product_name
+
+**Metric/Dimension: item_code**
+*   Metric Definition: The Stock Keeping Unit (SKU) or internal item code, a unique identifier for a specific product variant used for inventory tracking and sales.
+*   Default SQL Formula: item_code
+
+**Metric/Dimension: product_group_id**
+*   Metric Definition: A unique identifier for a logical grouping of products that share common characteristics or belong to the same category.
+*   Default SQL Formula: product_group_id
+
+**Metric/Dimension: product_group_name**
+*   Metric Definition: The descriptive name given to a product group, providing a human-readable label for identification.
+*   Default SQL Formula: product_group_name
+
+**Metric/Dimension: business_group_id**
+*   Metric Definition: A unique identifier for a broader business segment or category to which the product group belongs, allowing for hierarchical organization.
+*   Default SQL Formula: business_group_id
+
+**Metric/Dimension: business_group_name**
+*   Metric Definition: The human-readable name assigned to the business group.
+*   Default SQL Formula: business_group_name
+
+**Metric/Dimension: brand**
+*   Metric Definition: The commercial brand name associated with the product.
+*   Default SQL Formula: brand
+
+**Metric/Dimension: price**
+*   Metric Definition: The standard selling price of the product, typically the list price or current retail price.
+*   Default SQL Formula: price
+
+**Metric/Dimension: description**
+*   Metric Definition: A comprehensive textual explanation or definition providing additional details about the product group or business group.
+*   Default SQL Formula: description

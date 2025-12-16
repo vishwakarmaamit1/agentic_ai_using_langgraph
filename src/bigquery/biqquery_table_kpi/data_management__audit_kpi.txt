@@ -1,0 +1,10 @@
+## Data Management & Audit
+Metric Family Definition: Timestamps and identifiers used for data lineage, auditing, and tracking the creation and modification of records within the system.
+
+**Metric/Dimension: created_at**
+*   Metric Definition: The timestamp indicating when a record (e.g., sales, product, vendor) was first created and ingested into the data system.
+*   Default SQL Formula: created_at
+
+**Metric/Dimension: updated_at**
+*   Metric Definition: The timestamp indicating when a specific sales record was last modified or updated in the system.
+*   Default SQL Formula: updated_at

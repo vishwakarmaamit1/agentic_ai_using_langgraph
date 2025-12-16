@@ -7,6 +7,9 @@ import pandas as pd
 import datetime  # <-- NEW: Import datetime
 from google.cloud import bigquery
 from typing import List, Dict, Any
+from fastapi import HTTPException
+
+from src.bucket.read_bucket_file import upload_file_to_gcs
 
 # --- CONFIGURATION (unchanged) ---
 PROJECT_ID = "reflected-radio-438310-s1"
@@ -14,7 +17,9 @@ DATASET_ID = "retail_analytics_db"
 INPUT_DIR_CSV = "bigquery_schemas_with_business_ctx_csv"
 OUTPUT_DIR_PICKLE = "bigquery_metadata_pickles"
 SAMPLE_LIMIT = 2
-
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PICKLE_DIR_RELATIVE = "bigquery/bigquery_metadata_pickles"
+PICKLE_DIR = os.path.join(BASE_DIR, PICKLE_DIR_RELATIVE)
 
 # --- NEW: Custom JSON Serializer ---
 def json_serial(obj):
@@ -194,6 +199,105 @@ def export_metadata_to_pickle(input_dir_csv: str, output_dir_pickle: str):
 
     print("-" * 50)
     print(f"Pickle generation complete. Total files processed: {processed_count}")
+
+
+# --- UTILITY FUNCTION WITH ROBUST ERROR HANDLING ---
+
+def load_metadata_from_pickle(table_id: str) -> Dict[str, Any]:
+    """
+    Constructs the expected filename, loads the pickle file, and parses the
+    internal JSON string data, raising HTTPExceptions on failure.
+    """
+    pickle_filename = f"{table_id}.pkl"
+    pickle_path = os.path.join(PICKLE_DIR, pickle_filename)
+
+    # 1. Path Check (Handles 404)
+    if not os.path.exists(pickle_path):
+        raise HTTPException(
+            status_code=404,
+            detail=f"Metadata file not found for table: {table_id}. Looked in: {PICKLE_DIR}"
+        )
+
+    try:
+        # 2. Load Pickle Data
+        with open(pickle_path, 'rb') as f:
+            pickled_data = pickle.load(f)
+
+        # 3. Check Internal Success Flag
+        if not pickled_data.get("success"):
+            raise HTTPException(
+                status_code=500,
+                detail=f"Pickle file for {table_id} indicates a previous failure. Error: {pickled_data.get('error', 'No error detail available')}"
+            )
+
+        # 4. Decode JSON String
+        metadata_json_string = pickled_data.get("data")
+        # outer_metadata_dict = {"success": true, "filename": "...", "data": {...}}
+        outer_metadata_dict = json.loads(metadata_json_string)
+
+        # 5. Navigate New Nested Structure
+        full_table_name = outer_metadata_dict.get("filename")
+        data_content = outer_metadata_dict.get("data", {}).get(full_table_name, {})
+
+        # 6. Return Structured Response
+        return {
+            "success": outer_metadata_dict.get("success"),
+            "filename": full_table_name,
+            "data": {
+                full_table_name: data_content
+            }
+        }
+
+    except pickle.UnpicklingError as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to unpickle file for {table_id}. File might be corrupted. Error: {e}"
+        )
+    except json.JSONDecodeError as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to decode internal JSON string in pickle file for {table_id}. Error: {e}"
+        )
+    except Exception as e:
+        # Catch all other exceptions (permissions, corruption, internal logic errors)
+        # 🚩 CRITICAL: Ensure we raise HTTPException for EVERY failure path
+        raise HTTPException(
+            status_code=500,
+            detail=f"An unexpected internal error occurred while processing {table_id}: {e.__class__.__name__}: {e}"
+        )
+
+
+# --- ORCHESTRATION LOGIC ---
+
+def upload_existing_pickles(local_pickle_dir: str, gcs_bucket: str, gcs_prefix: str) -> List[Dict]:
+    """
+    Reads all .pkl files from the local directory and uploads them to GCS.
+    """
+    if not os.path.exists(local_pickle_dir):
+        raise FileNotFoundError(f"Local pickle directory not found: {local_pickle_dir}")
+
+    uploaded_files = []
+    ALLOWED_EXTENSIONS = ('.pkl', '.txt', '.csv')
+    # Iterate through locally generated Pickle files
+    for filename in os.listdir(local_pickle_dir):
+        if filename.endswith(ALLOWED_EXTENSIONS):
+            local_file_path = os.path.join(local_pickle_dir, filename)
+
+            # Construct GCS destination path: prefix/filename.pkl
+            gcs_blob_name = f"{gcs_prefix}/{filename}"
+
+            try:
+                upload_url = upload_file_to_gcs(
+                    local_file_path,
+                    gcs_bucket,
+                    gcs_blob_name
+                )
+                uploaded_files.append({"file": filename, "gcs_url": upload_url})
+            except Exception as e:
+                print(f"  ❌ GCS Upload Failed for {filename}. Error: {e}")
+                uploaded_files.append({"file": filename, "gcs_url": None, "error": str(e)})
+
+    return uploaded_files
 
 
 # --- MAIN EXECUTION ---

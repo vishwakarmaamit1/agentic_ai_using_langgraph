@@ -1,0 +1,26 @@
+## Sales Performance & Profitability
+Metric Family Definition: Key metrics and dimensions used to measure the revenue, volume, and profit generated from retail sales transactions.
+
+**Metric/Dimension: sale_id**
+*   Metric Definition: A unique identifier assigned to each individual sales transaction, enabling granular analysis and auditing.
+*   Default SQL Formula: sale_id
+
+**Metric/Dimension: quantity_sold**
+*   Metric Definition: The number of units of the product sold in this specific transaction line item.
+*   Default SQL Formula: Coalesce(SUM(quantity_sold), 0)
+
+**Metric/Dimension: total_sales**
+*   Metric Definition: The gross monetary value generated from this specific sale line item before any discounts, returns, or taxes are applied.
+*   Default SQL Formula: Coalesce(SUM(total_sales), 0)
+
+**Metric/Dimension: margin**
+*   Metric Definition: The profit margin for this specific sale line item, typically calculated as (selling price - cost of goods sold).
+*   Default SQL Formula: Coalesce(SUM(margin), 0)
+
+**Metric/Dimension: discount**
+*   Metric Definition: The monetary value of any discount applied to this specific sale line item.
+*   Default SQL Formula: Coalesce(SUM(discount), 0)
+
+**Metric/Dimension: net_amount**
+*   Metric Definition: The final monetary amount received from the customer for this sale line item after applying all discounts but before taxes.
+*   Default SQL Formula: Coalesce(SUM(net_amount), 0)

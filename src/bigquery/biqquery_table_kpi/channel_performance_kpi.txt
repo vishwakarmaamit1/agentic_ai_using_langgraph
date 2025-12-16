@@ -1,0 +1,14 @@
+## Channel Performance
+Metric Family Definition: Dimensions for analyzing sales performance and customer interactions across different retail channels.
+
+**Metric/Dimension: channel_id**
+*   Metric Definition: An identifier that uniquely references the sales channel through which the transaction was completed.
+*   Default SQL Formula: channel_id
+
+**Metric/Dimension: channel_name**
+*   Metric Definition: The human-readable name or label for the retail channel.
+*   Default SQL Formula: channel_name
+
+**Metric/Dimension: description**
+*   Metric Definition: A detailed textual explanation or definition of the retail channel, providing additional context beyond its name.
+*   Default SQL Formula: description

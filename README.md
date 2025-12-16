@@ -14,5 +14,6 @@ Install gcloud
 brew install --cask google-cloud-cli
 gcloud init
 
-gcloud login 
+# Run this command before running the application
+gcloud auth login 
 gcloud auth application-default login

@@ -1,0 +1,184 @@
+## Sales Performance & Profitability
+Metric Family Definition: Key metrics and dimensions used to measure the revenue, volume, and profit generated from retail sales transactions.
+
+**Metric/Dimension: sale_id**
+*   Metric Definition: A unique identifier assigned to each individual sales transaction, enabling granular analysis and auditing.
+*   Default SQL Formula: sale_id
+
+**Metric/Dimension: quantity_sold**
+*   Metric Definition: The number of units of the product sold in this specific transaction line item.
+*   Default SQL Formula: Coalesce(SUM(quantity_sold), 0)
+
+**Metric/Dimension: total_sales**
+*   Metric Definition: The gross monetary value generated from this specific sale line item before any discounts, returns, or taxes are applied.
+*   Default SQL Formula: Coalesce(SUM(total_sales), 0)
+
+**Metric/Dimension: margin**
+*   Metric Definition: The profit margin for this specific sale line item, typically calculated as (selling price - cost of goods sold).
+*   Default SQL Formula: Coalesce(SUM(margin), 0)
+
+**Metric/Dimension: discount**
+*   Metric Definition: The monetary value of any discount applied to this specific sale line item.
+*   Default SQL Formula: Coalesce(SUM(discount), 0)
+
+**Metric/Dimension: net_amount**
+*   Metric Definition: The final monetary amount received from the customer for this sale line item after applying all discounts but before taxes.
+*   Default SQL Formula: Coalesce(SUM(net_amount), 0)
+
+## Product & Merchandising Analytics
+Metric Family Definition: Dimensions and attributes related to products, their groupings, and associated business units, enabling analysis of product performance and merchandising strategies.
+
+**Metric/Dimension: product_id**
+*   Metric Definition: An identifier that uniquely references a specific product involved in the sale.
+*   Default SQL Formula: product_id
+
+**Metric/Dimension: product_name**
+*   Metric Definition: The human-readable name or title of the product.
+*   Default SQL Formula: product_name
+
+**Metric/Dimension: item_code**
+*   Metric Definition: The Stock Keeping Unit (SKU) or internal item code, a unique identifier for a specific product variant used for inventory tracking and sales.
+*   Default SQL Formula: item_code
+
+**Metric/Dimension: product_group_id**
+*   Metric Definition: A unique identifier for a logical grouping of products that share common characteristics or belong to the same category.
+*   Default SQL Formula: product_group_id
+
+**Metric/Dimension: product_group_name**
+*   Metric Definition: The descriptive name given to a product group, providing a human-readable label for identification.
+*   Default SQL Formula: product_group_name
+
+**Metric/Dimension: business_group_id**
+*   Metric Definition: A unique identifier for a broader business segment or category to which the product group belongs, allowing for hierarchical organization.
+*   Default SQL Formula: business_group_id
+
+**Metric/Dimension: business_group_name**
+*   Metric Definition: The human-readable name assigned to the business group.
+*   Default SQL Formula: business_group_name
+
+**Metric/Dimension: brand**
+*   Metric Definition: The commercial brand name associated with the product.
+*   Default SQL Formula: brand
+
+**Metric/Dimension: price**
+*   Metric Definition: The standard selling price of the product, typically the list price or current retail price.
+*   Default SQL Formula: price
+
+**Metric/Dimension: description**
+*   Metric Definition: A comprehensive textual explanation or definition providing additional details about the product group or business group.
+*   Default SQL Formula: description
+
+## Location & Regional Performance
+Metric Family Definition: Dimensions related to the geographical context of retail operations, enabling analysis of sales and performance by location.
+
+**Metric/Dimension: location_id**
+*   Metric Definition: An identifier that uniquely references the physical or virtual location where the sale transaction occurred.
+*   Default SQL Formula: location_id
+
+**Metric/Dimension: state_name**
+*   Metric Definition: The full name of the state or province where the retail location is geographically situated.
+*   Default SQL Formula: state_name
+
+**Metric/Dimension: city_name**
+*   Metric Definition: The full name of the city where the retail location is geographically situated.
+*   Default SQL Formula: city_name
+
+**Metric/Dimension: region**
+*   Metric Definition: A broader, predefined geographical grouping or administrative division that encompasses multiple states or cities for retail locations.
+*   Default SQL Formula: region
+
+## Channel Performance
+Metric Family Definition: Dimensions for analyzing sales performance and customer interactions across different retail channels.
+
+**Metric/Dimension: channel_id**
+*   Metric Definition: An identifier that uniquely references the sales channel through which the transaction was completed.
+*   Default SQL Formula: channel_id
+
+**Metric/Dimension: channel_name**
+*   Metric Definition: The human-readable name or label for the retail channel.
+*   Default SQL Formula: channel_name
+
+**Metric/Dimension: description**
+*   Metric Definition: A detailed textual explanation or definition of the retail channel, providing additional context beyond its name.
+*   Default SQL Formula: description
+
+## Vendor & Supply Chain Insights
+Metric Family Definition: Dimensions providing information about product suppliers, enabling analysis of vendor performance and supply chain efficiency.
+
+**Metric/Dimension: vendor_id**
+*   Metric Definition: An identifier that uniquely references the vendor or supplier of the product sold.
+*   Default SQL Formula: vendor_id
+
+**Metric/Dimension: vendor_name**
+*   Metric Definition: The official registered name of the vendor or supplier.
+*   Default SQL Formula: vendor_name
+
+**Metric/Dimension: contact_email**
+*   Metric Definition: The primary email address designated for communication with the vendor.
+*   Default SQL Formula: contact_email
+
+**Metric/Dimension: contact_number**
+*   Metric Definition: The primary telephone number for direct contact with the vendor.
+*   Default SQL Formula: contact_number
+
+**Metric/Dimension: region**
+*   Metric Definition: The geographical region or location associated with the vendor's primary operations, headquarters, or main distribution center.
+*   Default SQL Formula: region
+
+## Time & Trend Analysis
+Metric Family Definition: Dimensions providing temporal context for retail data, enabling time-based filtering, aggregation, and trend analysis.
+
+**Metric/Dimension: date_id**
+*   Metric Definition: The calendar date on which the sales transaction was recorded, or a unique identifier for a specific calendar date.
+*   Default SQL Formula: date_id
+
+**Metric/Dimension: sale_timestamp**
+*   Metric Definition: The exact date and time when the sales transaction was completed and recorded in the system.
+*   Default SQL Formula: sale_timestamp
+
+**Metric/Dimension: day**
+*   Metric Definition: The day of the month, represented as an integer from 1 to 31.
+*   Default SQL Formula: day
+
+**Metric/Dimension: month**
+*   Metric Definition: The calendar month number, represented as an integer from 1 (January) to 12 (December).
+*   Default SQL Formula: month
+
+**Metric/Dimension: month_name**
+*   Metric Definition: The full name of the calendar month (e.g., 'January', 'February').
+*   Default SQL Formula: month_name
+
+**Metric/Dimension: quarter**
+*   Metric Definition: The calendar quarter number, represented as an integer from 1 to 4.
+*   Default SQL Formula: quarter
+
+**Metric/Dimension: year**
+*   Metric Definition: The four-digit calendar year.
+*   Default SQL Formula: year
+
+**Metric/Dimension: week_of_year**
+*   Metric Definition: The week number within the year, typically ranging from 1 to 52 or 53.
+*   Default SQL Formula: week_of_year
+
+**Metric/Dimension: is_weekend**
+*   Metric Definition: A boolean flag indicating whether the date falls on a weekend (TRUE) or a weekday (FALSE).
+*   Default SQL Formula: is_weekend
+
+**Metric/Dimension: year_month**
+*   Metric Definition: A concatenated string representing the year and month, typically in 'YYYY-MM' format.
+*   Default SQL Formula: year_month
+
+**Metric/Dimension: year_quarter**
+*   Metric Definition: A concatenated string representing the year and quarter, typically in 'YYYY-Q[Q]' format.
+*   Default SQL Formula: year_quarter
+
+## Data Management & Audit
+Metric Family Definition: Timestamps and identifiers used for data lineage, auditing, and tracking the creation and modification of records within the system.
+
+**Metric/Dimension: created_at**
+*   Metric Definition: The timestamp indicating when a record (e.g., sales, product, vendor) was first created and ingested into the data system.
+*   Default SQL Formula: created_at
+
+**Metric/Dimension: updated_at**
+*   Metric Definition: The timestamp indicating when a specific sales record was last modified or updated in the system.
+*   Default SQL Formula: updated_at

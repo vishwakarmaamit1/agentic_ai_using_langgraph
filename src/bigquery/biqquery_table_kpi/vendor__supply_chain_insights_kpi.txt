@@ -1,0 +1,22 @@
+## Vendor & Supply Chain Insights
+Metric Family Definition: Dimensions providing information about product suppliers, enabling analysis of vendor performance and supply chain efficiency.
+
+**Metric/Dimension: vendor_id**
+*   Metric Definition: An identifier that uniquely references the vendor or supplier of the product sold.
+*   Default SQL Formula: vendor_id
+
+**Metric/Dimension: vendor_name**
+*   Metric Definition: The official registered name of the vendor or supplier.
+*   Default SQL Formula: vendor_name
+
+**Metric/Dimension: contact_email**
+*   Metric Definition: The primary email address designated for communication with the vendor.
+*   Default SQL Formula: contact_email
+
+**Metric/Dimension: contact_number**
+*   Metric Definition: The primary telephone number for direct contact with the vendor.
+*   Default SQL Formula: contact_number
+
+**Metric/Dimension: region**
+*   Metric Definition: The geographical region or location associated with the vendor's primary operations, headquarters, or main distribution center.
+*   Default SQL Formula: region

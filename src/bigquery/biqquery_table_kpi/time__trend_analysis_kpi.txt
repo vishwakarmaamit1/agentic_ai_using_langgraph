@@ -1,0 +1,46 @@
+## Time & Trend Analysis
+Metric Family Definition: Dimensions providing temporal context for retail data, enabling time-based filtering, aggregation, and trend analysis.
+
+**Metric/Dimension: date_id**
+*   Metric Definition: The calendar date on which the sales transaction was recorded, or a unique identifier for a specific calendar date.
+*   Default SQL Formula: date_id
+
+**Metric/Dimension: sale_timestamp**
+*   Metric Definition: The exact date and time when the sales transaction was completed and recorded in the system.
+*   Default SQL Formula: sale_timestamp
+
+**Metric/Dimension: day**
+*   Metric Definition: The day of the month, represented as an integer from 1 to 31.
+*   Default SQL Formula: day
+
+**Metric/Dimension: month**
+*   Metric Definition: The calendar month number, represented as an integer from 1 (January) to 12 (December).
+*   Default SQL Formula: month
+
+**Metric/Dimension: month_name**
+*   Metric Definition: The full name of the calendar month (e.g., 'January', 'February').
+*   Default SQL Formula: month_name
+
+**Metric/Dimension: quarter**
+*   Metric Definition: The calendar quarter number, represented as an integer from 1 to 4.
+*   Default SQL Formula: quarter
+
+**Metric/Dimension: year**
+*   Metric Definition: The four-digit calendar year.
+*   Default SQL Formula: year
+
+**Metric/Dimension: week_of_year**
+*   Metric Definition: The week number within the year, typically ranging from 1 to 52 or 53.
+*   Default SQL Formula: week_of_year
+
+**Metric/Dimension: is_weekend**
+*   Metric Definition: A boolean flag indicating whether the date falls on a weekend (TRUE) or a weekday (FALSE).
+*   Default SQL Formula: is_weekend
+
+**Metric/Dimension: year_month**
+*   Metric Definition: A concatenated string representing the year and month, typically in 'YYYY-MM' format.
+*   Default SQL Formula: year_month
+
+**Metric/Dimension: year_quarter**
+*   Metric Definition: A concatenated string representing the year and quarter, typically in 'YYYY-Q[Q]' format.
+*   Default SQL Formula: year_quarter
